@@ -32,7 +32,6 @@ zofka.move(300);
 zofka.penDown();
 
 nakresliKrug(30, Color.red);
-
     }
 
 private void nakresliKrug(int delkaStrany, Color barva) {
