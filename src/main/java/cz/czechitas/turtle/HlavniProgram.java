@@ -14,30 +14,22 @@ public class HlavniProgram {
     public void start() {
         //TODO Tady bude kód pro kreslení želví grafiky.
 
-nakresliTreuhelnik(-150.23d, new Color(50,250,100));
+//zmrzlina
+nakresliKrug(100, Color.blue);
 
 zofka.penUp();
 zofka.turnRight(180);
-zofka.move(200);
+ for (int i = 0; i <3 ; i++) {
+   zofka.move(2*0.08715574274*100);
+   zofka.turnLeft(10);
+        }
 zofka.penDown();
+ zofka.turnLeft(90);
+ nakresliTreuhelnik(180,  Color.ORANGE);
 
-nakresliCtverecek(200, Color.red);
+//snehulak
 
-zofka.penUp();
-zofka.turnLeft(90);
-zofka.move(250);
-zofka.penDown();
 
-nakresliObdelnik(-100, 200,  new Color(150,25,200));
-
-zofka.penUp();
-zofka.move(300);
-zofka.turnLeft(90);
-zofka.move(300);
-zofka.turnRight(180);
-zofka.penDown();
-
-nakresliKrug(200, Color.red);
     }
 
 private void nakresliKrug(double radiusStrany, Color barva) {
@@ -61,11 +53,12 @@ private void nakresliKrug(double radiusStrany, Color barva) {
 
     private void nakresliTreuhelnik(double delkaStrany, Color barva) {
     zofka.setPenColor(barva);
-    for (int i = 0; i < 3; i++) {
-        zofka.turnRight(30);
-        zofka.move(delkaStrany);
-        zofka.turnRight(90);
-    }
+        for (int i = 0; i < 3; i++) {
+         zofka.turnRight(30);
+         zofka.move(delkaStrany);
+         zofka.turnRight(90);
+        }
+
 }
 
 public void nakresliCtverecek(double delkaStrany, Color barva) {
