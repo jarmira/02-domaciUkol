@@ -28,23 +28,57 @@ public class HlavniProgram {
 // nakresliTreuhelnik(180,  Color.ORANGE);
 
 //snehulak
-nakresliKrug(50, Color.CYAN);
-otockaKolo(50);
-nakresliKrug(80, Color.blue);
-otockaKolo(80);
-nakresliKrug(20,Color.cyan);
-zofka.turnLeft(75);
+//nakresliKrug(50, Color.CYAN);
+//otockaKolo(50);
+//nakresliKrug(80, Color.blue);
+//otockaKolo(80);
+//nakresliKrug(20,Color.cyan);
+//zofka.turnLeft(75);
+//zofka.penUp();
+//zofka.move(160);
+//zofka.turnLeft(90);
+//zofka.penDown();
+//nakresliKrug(20, Color.cyan);
+//zofka.turnLeft(140);
+//zofka.penUp();
+//zofka.move(102);
+//zofka.penDown();
+//zofka.turnLeft(128);
+//nakresliKrug(100, Color.blue);
+
+//vlak
+zofka.turnRight(90);
 zofka.penUp();
-zofka.move(160);
+zofka.move(300);
 zofka.turnLeft(90);
 zofka.penDown();
-nakresliKrug(20, Color.cyan);
-zofka.turnLeft(140);
+ nakresliObdelnik(200,100,Color.DARK_GRAY);
+
+ nakresliKrugleft(50, Color.BLACK);
+ zofka.penUp();
+ zofka.turnLeft(90);
+ zofka.move(100);
+ zofka.penDown();
+ zofka.turnRight(90);
+ nakresliObdelnik(100,250,Color.DARK_GRAY);
 zofka.penUp();
-zofka.move(102);
+zofka.turnLeft(90);
+zofka.move(100);
 zofka.penDown();
-zofka.turnLeft(128);
-nakresliKrug(100, Color.blue);
+nakresliKrugleft(30, Color.BLACK);
+zofka.penUp();
+zofka.move(80);
+zofka.penDown();
+nakresliKrugleft(30, Color.BLACK);
+zofka.penUp();
+zofka.move(73);
+zofka.turnRight(90);
+zofka.move(70);
+zofka.turnRight(150);
+zofka.penDown();
+nakresliTreuhelnik(100, Color.blue);
+
+
     }
 
     private void otockaKolo(double radiusStrany) {
@@ -52,11 +86,18 @@ nakresliKrug(100, Color.blue);
         zofka.turnRight(180);
         for (int i = 0; i <8 ; i++) {
           zofka.move(2*0.08715574274*radiusStrany);
-          zofka.turnLeft(12);
+          zofka.turnRight(12);
                }
         zofka.penDown();
     }
 
+    private void nakresliKrugleft(double radiusStrany, Color barva) {
+        zofka.setPenColor(barva);
+        for (int i = 0; i < 36; i++) {
+            zofka.move(2*0.08715574274*radiusStrany);
+            zofka.turnLeft(10);
+        }
+    }
     private void nakresliKrug(double radiusStrany, Color barva) {
    zofka.setPenColor(barva);
    for (int i = 0; i < 36; i++) {
